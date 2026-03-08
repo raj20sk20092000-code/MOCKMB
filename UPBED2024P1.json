@@ -1,7 +1,7 @@
 [
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X1.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x1.png",
     "opts": [
       "A",
       "B",
@@ -15,21 +15,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X2.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X3.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x2.png",
     "opts": [
       "A",
       "B",
@@ -43,35 +29,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X4.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X5.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X6.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x3.png",
     "opts": [
       "A",
       "B",
@@ -85,7 +43,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X7.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x4.png",
     "opts": [
       "A",
       "B",
@@ -99,7 +57,49 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X8.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x5.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x6.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x7.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x8.png",
     "opts": [
       "A",
       "B",
@@ -113,7 +113,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X9.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x9.png",
     "opts": [
       "A",
       "B",
@@ -127,21 +127,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X10.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X11.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x10.png",
     "opts": [
       "A",
       "B",
@@ -155,49 +141,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X12.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X13.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X14.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X15.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x11.png",
     "opts": [
       "A",
       "B",
@@ -211,7 +155,21 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X16.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x12.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x13.png",
     "opts": [
       "A",
       "B",
@@ -225,7 +183,49 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X17.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x14.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x15.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x16.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x17.png",
     "opts": [
       "A",
       "B",
@@ -239,7 +239,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X18.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x18.png",
     "opts": [
       "A",
       "B",
@@ -253,7 +253,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X19.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x19.png",
     "opts": [
       "A",
       "B",
@@ -267,7 +267,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X20.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x20.png",
     "opts": [
       "A",
       "B",
@@ -281,7 +281,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X21.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x21.png",
     "opts": [
       "A",
       "B",
@@ -295,7 +295,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X22.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x22.png",
     "opts": [
       "A",
       "B",
@@ -309,7 +309,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X23.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x23.png",
     "opts": [
       "A",
       "B",
@@ -323,7 +323,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X24.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x24.png",
     "opts": [
       "A",
       "B",
@@ -337,7 +337,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X25.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x25.png",
     "opts": [
       "A",
       "B",
@@ -351,7 +351,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X26.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x26.png",
     "opts": [
       "A",
       "B",
@@ -365,147 +365,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X27.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X28.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X29.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X30.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X31.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X32.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X33.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X34.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X35.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X36.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X37.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x27.png",
     "opts": [
       "A",
       "B",
@@ -519,7 +379,133 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X38.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x28.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x29.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x30.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x31.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x32.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x33.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x34.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x35.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x36.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x37.png",
     "opts": [
       "A",
       "B",
@@ -533,7 +519,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X39.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x38.png",
     "opts": [
       "A",
       "B",
@@ -547,7 +533,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X40.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x39.png",
     "opts": [
       "A",
       "B",
@@ -561,175 +547,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X41.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X42.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X43.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X44.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X45.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X46.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X47.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X48.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X49.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X50.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X51.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X52.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X53.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x40.png",
     "opts": [
       "A",
       "B",
@@ -743,7 +561,175 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X54.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x41.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x42.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x43.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x44.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x45.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x46.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x47.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x48.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x49.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x50.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x51.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x52.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x53.png",
     "opts": [
       "A",
       "B",
@@ -757,21 +743,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X55.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X56.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x54.png",
     "opts": [
       "A",
       "B",
@@ -785,7 +757,21 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X57.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x55.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x56.png",
     "opts": [
       "A",
       "B",
@@ -799,147 +785,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X58.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X59.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X60.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X61.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X62.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X63.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X64.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X65.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X66.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "B"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X67.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X68.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x57.png",
     "opts": [
       "A",
       "B",
@@ -953,21 +799,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X69.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X70.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x58.png",
     "opts": [
       "A",
       "B",
@@ -981,7 +813,91 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X71.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x59.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x60.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x61.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x62.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x63.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x64.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x65.png",
     "opts": [
       "A",
       "B",
@@ -995,63 +911,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X72.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X73.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X74.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X75.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X76.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x66.png",
     "opts": [
       "A",
       "B",
@@ -1065,7 +925,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X77.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x67.png",
     "opts": [
       "A",
       "B",
@@ -1079,7 +939,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X78.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x68.png",
     "opts": [
       "A",
       "B",
@@ -1093,7 +953,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X79.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x69.png",
     "opts": [
       "A",
       "B",
@@ -1107,105 +967,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X80.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X81.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X82.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X83.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X84.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X85.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X86.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "A"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X87.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x70.png",
     "opts": [
       "A",
       "B",
@@ -1219,49 +981,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X88.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X89.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X90.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X91.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x71.png",
     "opts": [
       "A",
       "B",
@@ -1275,7 +995,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X92.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x72.png",
     "opts": [
       "A",
       "B",
@@ -1289,7 +1009,49 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X93.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x73.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x74.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x75.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x76.png",
     "opts": [
       "A",
       "B",
@@ -1303,21 +1065,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X94.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X95.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x77.png",
     "opts": [
       "A",
       "B",
@@ -1331,49 +1079,7 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X96.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X97.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "C"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X98.png",
-    "opts": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "ans": [
-      "D"
-    ],
-    "exp": ""
-  },
-  {
-    "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X99.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x78.png",
     "opts": [
       "A",
       "B",
@@ -1387,7 +1093,301 @@
   },
   {
     "q": "",
-    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/X100.png",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x79.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x80.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x81.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x82.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x83.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x84.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x85.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x86.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x87.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x88.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x89.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x90.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x91.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x92.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x93.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "B"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x94.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x95.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x96.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x97.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "C"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x98.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "D"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x99.png",
+    "opts": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ans": [
+      "A"
+    ],
+    "exp": ""
+  },
+  {
+    "q": "",
+    "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/x100.png",
     "opts": [
       "A",
       "B",
