@@ -41,18 +41,31 @@
       "description": "UP BEd 2024 Paper 1 — 100 Questions with Answer Key",
       "file": "UPBED2023P1.json"
     },
-    {
-  "id": "UPBED2020P1",
-  "name": "UPBED 2020 — Paper 1",
-  "type": "mcq",
-  "subject": "UP BEd",
-  "difficulty": "Medium",
-  "questions": 100,
-  "time": 120,
-  "marksCorrect": 1,
-  "marksWrong": 0,
-  "description": "UP BEd 2020 Paper 1 — 100 Questions with Answer Key",
-  "file": "UPBED2020P1.json"
-}
+  {
+      "id": "UPBED2020P1",
+      "name": "UPBED 2020 — Paper 1",
+      "type": "mcq",
+      "subject": "UP BEd",
+      "difficulty": "Medium",
+      "questions": 100,
+      "time": 120,
+      "marksCorrect": 1,
+      "marksWrong": 0,
+      "description": "UP BEd 2019 Paper 1 — 100 Questions with Answer Key",
+      "file": "UPBED2020P1.json"
+    },
+ {
+      "id": "UPBED2019P1",
+      "name": "UPBED 2019 — Paper 1",
+      "type": "mcq",
+      "subject": "UP BEd",
+      "difficulty": "Medium",
+      "questions": 100,
+      "time": 120,
+      "marksCorrect": 1,
+      "marksWrong": 0,
+      "description": "UP BEd 2019 Paper 1 — 100 Questions with Answer Key",
+      "file": "UPBED2019P1.json"
+    },
   ]
 }
