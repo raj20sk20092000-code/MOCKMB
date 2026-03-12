@@ -2679,10 +2679,11 @@ function updateSyncUI(connected, name){
 
 async function connectGitHub(){
   const token = document.getElementById('ghToken').value.trim();
-  const name  = document.getElementById('ghUserName').value.trim() || 'user';
+  const name  = document.getElementById('ghUserName').value.trim().replace(/[^a-zA-Z0-9_-]/g,'').toLowerCase() || 'user';
   if(!token){ alert('Please enter your token!'); return; }
   ghToken    = token;
-  ghSyncFile = GH_FILE; // always sync.json
+  ghSyncFile = `userdata/${name}-sync.json`;
+  ghFileSha  = null;
   document.getElementById('syncStatus').innerHTML = '⏳ Connecting...';
   document.getElementById('ghConnectBtn').disabled = true;
   try {
@@ -2696,10 +2697,32 @@ async function connectGitHub(){
     await dbSet('ghUserName', name);
     await dbSet('ghSyncFile', ghSyncFile);
     updateSyncUI(true, name);
-    await pullFromGitHub(true);
-    alert('✅ Connected as ' + name + '!');
+    // Try to load name-specific file first; if not found, migrate from old sync.json
+    const loaded = await pullFromGitHub(true);
+    if(!loaded){
+      // Try migrating from old sync.json
+      try {
+        const oldRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/userdata/sync.json?t=`+Date.now(), {
+          headers: { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+        if(oldRes.ok){
+          const oldData = await oldRes.json();
+          const json = JSON.parse(decodeURIComponent(escape(atob(oldData.content.replace(/\n/g,'')))));
+          if(json.testHistory) testHistory = json.testHistory;
+          if(json.srsData)     srsData     = json.srsData;
+          if(json.streakData)  streakData  = json.streakData;
+          if(json.srsSettings) srsSettings = json.srsSettings;
+          await saveLocalData();
+          await pushToGitHub(true); // save to new name-specific file
+          alert(`✅ Connected as "${name}"!\n\nData migrated from sync.json → ${ghSyncFile}`);
+          renderHome();
+          return;
+        }
+      } catch(e){}
+    }
+    alert(`✅ Connected as "${name}"!\nYour file: ${ghSyncFile}`);
   } catch(e){
-    ghToken = '';
+    ghToken = ''; ghSyncFile = GH_FILE;
     document.getElementById('ghConnectBtn').disabled = false;
     document.getElementById('syncStatus').innerHTML = '🔴 Failed: ' + e.message;
     document.getElementById('syncStatus').style.color = 'var(--red)';
@@ -2748,12 +2771,12 @@ async function pushToGitHub(silent=false){
 }
 
 async function pullFromGitHub(silent=false){
-  if(!ghToken) return;
+  if(!ghToken) return false;
   try {
     const res = await fetch(getGhApi() + '?t=' + Date.now(), {
       headers: { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github.v3+json' }
     });
-    if(res.status===404){ await pushToGitHub(); return; }
+    if(res.status===404){ if(!silent) await pushToGitHub(); return false; }
     if(!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     ghFileSha = data.sha;
@@ -2767,8 +2790,10 @@ async function pullFromGitHub(silent=false){
     renderHome();
     document.getElementById('syncStatus').innerHTML = '🟢 Loaded: ' + new Date().toLocaleTimeString();
     if(!silent) alert('✅ Data loaded from cloud!');
+    return true;
   } catch(e){
     if(!silent) alert('❌ Load failed: ' + e.message);
+    return false;
   }
 }
 
@@ -2778,7 +2803,7 @@ async function initGitHubSync(){
     if(saved && saved.length > 10){
       ghToken    = saved;
       ghFileSha  = await dbGet('ghFileSha') || null;
-      ghSyncFile = GH_FILE;
+      ghSyncFile = await dbGet('ghSyncFile') || GH_FILE;
       const name = await dbGet('ghUserName') || '';
       updateSyncUI(true, name);
     }
