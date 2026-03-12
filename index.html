@@ -2698,6 +2698,13 @@ function disconnectGitHub(){
 
 async function pushToGitHub(silent=false){
   if(!ghToken) return;
+  // Always fetch latest SHA before push to avoid conflicts
+  try {
+    const shaRes = await fetch(GH_API + '?t=' + Date.now(), {
+      headers: { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if(shaRes.ok){ const d=await shaRes.json(); ghFileSha=d.sha; await dbSet('ghFileSha', ghFileSha); }
+  } catch(e){}
   const payload = { testHistory, srsData, streakData, srsSettings, savedAt: new Date().toISOString() };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
   const body = { message: 'sync ' + new Date().toLocaleString(), content };
