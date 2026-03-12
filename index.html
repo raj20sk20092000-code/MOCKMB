@@ -1094,11 +1094,17 @@ async function loadLocalData(){
   document.getElementById('srsNewPerDay').value = srsSettings.newPerDay || 10;
 }
 
+let autoSyncTimer = null;
 async function saveLocalData(){
   try { await dbSet('srsData',     srsData);     } catch(e){}
   try { await dbSet('testHistory', testHistory); } catch(e){}
   try { await dbSet('streakData',  streakData);  } catch(e){}
   try { await dbSet('srsSettings', srsSettings); } catch(e){}
+  // Auto-sync to GitHub if token connected (debounced 3s)
+  if(ghToken){
+    clearTimeout(autoSyncTimer);
+    autoSyncTimer = setTimeout(()=>{ pushToGitHub(true); }, 3000);
+  }
 }
 
 function saveSrsSettings(){
@@ -2690,7 +2696,7 @@ function disconnectGitHub(){
   updateSyncUI(false);
 }
 
-async function pushToGitHub(){
+async function pushToGitHub(silent=false){
   if(!ghToken) return;
   const payload = { testHistory, srsData, streakData, srsSettings, savedAt: new Date().toISOString() };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
@@ -2706,10 +2712,13 @@ async function pushToGitHub(){
     const data = await res.json();
     ghFileSha = data.content.sha;
     await dbSet('ghFileSha', ghFileSha);
-    document.getElementById('syncStatus').innerHTML = '🟢 Saved: ' + new Date().toLocaleTimeString();
+    const statusEl = document.getElementById('syncStatus');
+    if(statusEl){ statusEl.innerHTML = '🟢 Auto-saved: ' + new Date().toLocaleTimeString(); statusEl.style.color=''; }
+    if(!silent) toast('☁️ Synced to cloud!', 'success');
   } catch(e){
-    document.getElementById('syncStatus').innerHTML = '🔴 Save failed: ' + e.message;
-    document.getElementById('syncStatus').style.color = 'var(--red)';
+    const statusEl = document.getElementById('syncStatus');
+    if(statusEl){ statusEl.innerHTML = '🔴 Save failed: ' + e.message; statusEl.style.color='var(--red)'; }
+    if(!silent) toast('❌ Sync failed: ' + e.message, 'error');
   }
 }
 
