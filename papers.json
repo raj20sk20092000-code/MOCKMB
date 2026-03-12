@@ -66,6 +66,19 @@
       "marksWrong": 0,
       "description": "UP BEd 2019 Paper 1 — 100 Questions with Answer Key",
       "file": "UPBED2019P1.json"
-    }
+    },
+    {
+  "id": "UPBED2018P1",
+  "name": "UPBED 2018 — Paper 1",
+  "type": "mcq",
+  "subject": "UP BEd",
+  "difficulty": "Medium",
+  "questions": 100,
+  "time": 120,
+  "marksCorrect": 1,
+  "marksWrong": 0,
+  "description": "UP BEd 2018 Paper 1 — 100 Questions with Answer Key",
+  "file": "UPBED2018P1.json"
+   }
   ]
 }
