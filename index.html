@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#080b12">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>TestFlow</title>
-<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22TestFlow%22%2C%22short_name%22%3A%22TestFlow%22%2C%22description%22%3A%22GitHub-Powered%20Test%20Series%20App%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23080b12%22%2C%22theme_color%22%3A%22%23080b12%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20192%20192'%3E%3Crect%20width%3D'192'%20height%3D'192'%20rx%3D'40'%20fill%3D'%23080b12'%2F%3E%3Crect%20x%3D'16'%20y%3D'16'%20width%3D'160'%20height%3D'160'%20rx%3D'30'%20fill%3D'%230e1220'%2F%3E%3Ctext%20y%3D'125'%20x%3D'96'%20text-anchor%3D'middle'%20font-size%3D'90'%3ETF%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+<title>SciFlow</title>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22SciFlow%22%2C%22short_name%22%3A%22SciFlow%22%2C%22description%22%3A%22GitHub-Powered%20Test%20Series%20App%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23080b12%22%2C%22theme_color%22%3A%22%23080b12%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20192%20192'%3E%3Crect%20width%3D'192'%20height%3D'192'%20rx%3D'40'%20fill%3D'%23080b12'%2F%3E%3Crect%20x%3D'16'%20y%3D'16'%20width%3D'160'%20height%3D'160'%20rx%3D'30'%20fill%3D'%230e1220'%2F%3E%3Ctext%20y%3D'125'%20x%3D'96'%20text-anchor%3D'middle'%20font-size%3D'90'%3ETF%3C%2Ftext%3E%3C%2Fsvg%3E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjMDgwYjEyIi8+PHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjE2MCIgcng9IjMwIiBmaWxsPSIjMGUxMjIwIi8+PHRleHQgeT0iMTIwIiB4PSI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI3MCIgZmlsbD0iIzgxOGNmOCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC13ZWlnaHQ9IjkwMCI+VEY8L3RleHQ+PC9zdmc+">
 <meta name="mobile-web-app-capable" content="yes">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -556,15 +556,60 @@ body::before{
 .streak-info{flex:1;}
 .streak-lbl{font-size:0.75rem;font-weight:700;color:var(--gold);}
 .streak-sub{font-size:0.68rem;color:var(--muted);}
+
+/* ---- PAUSE OVERLAY ---- */
+#pauseOverlay{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:rgba(8,11,18,.97);
+  flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  text-align:center;padding:30px;
+}
+#pauseOverlay.active{display:flex;}
+.pause-title{font-size:1.4rem;font-weight:900;margin-top:8px;}
+.pause-timer{font-size:2.5rem;font-weight:900;font-family:'JetBrains Mono',monospace;
+  background:linear-gradient(135deg,var(--acc),var(--acc3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.pause-sub{font-size:0.82rem;color:var(--muted);}
+
+/* ---- BOOKMARK BUTTON ---- */
+.bm-btn{
+  background:none;border:none;font-size:1.1rem;cursor:pointer;
+  padding:2px 6px;border-radius:6px;transition:background .15s;
+}
+.bm-btn:active{background:rgba(99,102,241,.2);}
+
+/* ---- NOTE AREA ---- */
+.note-toggle{
+  margin-top:10px;padding:6px 12px;background:var(--s3);
+  border:1px dashed var(--border2);border-radius:8px;
+  color:var(--muted);font-size:0.75rem;font-weight:700;cursor:pointer;
+  width:100%;text-align:left;
+}
+.note-area{
+  width:100%;min-height:80px;margin-top:8px;
+  background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.25);
+  border-radius:8px;padding:10px;color:var(--text);font-size:0.82rem;
+  font-family:'Outfit',sans-serif;resize:vertical;
+}
+.note-area:focus{outline:none;border-color:var(--cyan);}
+
+/* ---- QDOT FLAGGED ---- */
+.qdot.flagged{background:rgba(245,158,11,.2);border-color:var(--gold);color:var(--gold);font-size:0.7rem;}
+
+/* ---- ANALYTICS ---- */
+.analytics-bar-wrap{margin-bottom:12px;}
+.analytics-bar-label{display:flex;justify-content:space-between;font-size:0.78rem;font-weight:700;margin-bottom:4px;}
+.analytics-bar-track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden;}
+.analytics-bar-fill{height:100%;border-radius:4px;transition:width .5s ease;}
 </style>
 </head>
 <body>
 
 <!-- ========== TOPBAR ========== -->
 <div class="topbar" id="mainTopbar">
-  <div class="topbar-logo">TF</div>
+  <div class="topbar-logo">SF</div>
   <div style="flex:1;">
-    <div class="topbar-title">TestFlow</div>
+    <div class="topbar-title">SciFlow</div>
   </div>
   <div id="topbarRight"></div>
 </div>
@@ -690,17 +735,13 @@ body::before{
       </div>
     </div>
 
-    <div class="sec-label">⚠️ Danger Zone</div>
-    <div class="card" style="border-color:rgba(244,63,94,.3);">
-      <div style="font-size:0.8rem;color:var(--text2);margin-bottom:12px;line-height:1.6;">
-        Clear all saved data — test history, SRS cards, streak. This cannot be undone!
-      </div>
-      <button class="btn" onclick="clearAllData()" style="width:100%;background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.4);color:var(--red);font-weight:800;">
-        🗑️ Clear All Data
-      </button>
-    </div>
-
     <div style="height:20px;"></div>
+  </div>
+
+  <!-- ANALYTICS PAGE -->
+  <div class="page" id="page-analytics">
+    <div style="height:14px;"></div>
+    <div id="analyticsContent"></div>
   </div>
 
 </div><!-- end mainScroll -->
@@ -711,6 +752,7 @@ body::before{
   <div class="bnav-item" id="bnav-papers" onclick="goPage('papers')"><span class="bnav-icon">📄</span>Papers</div>
   <div class="bnav-item" id="bnav-results" onclick="goPage('results')"><span class="bnav-icon">📊</span>Results</div>
   <div class="bnav-item" id="bnav-review" onclick="goPage('review')"><span class="bnav-icon">🧠</span>Review</div>
+  <div class="bnav-item" id="bnav-analytics" onclick="goPage('analytics')"><span class="bnav-icon">📈</span>Stats</div>
 </div>
 
 <!-- ========== SRS TEST VIEW ========== -->
@@ -727,6 +769,7 @@ body::before{
   <div class="exam-topbar">
     <button onclick="confirmExitExam()" style="background:none;border:none;color:var(--text2);font-size:1.3rem;cursor:pointer;padding:4px 8px;">←</button>
     <div class="exam-title" id="examTitle">Test</div>
+    <button onclick="pauseExam()" id="pauseBtn" style="background:none;border:none;color:var(--text2);font-size:1.1rem;cursor:pointer;padding:4px 8px;">⏸️</button>
     <div class="timer-display" id="timerDisplay">00:00</div>
   </div>
   <div class="exam-prog">
@@ -807,6 +850,7 @@ body::before{
         <button class="btn btn-ghost" onclick="toggleReview()">📖 Review</button>
         <button class="btn btn-gold" onclick="retakeTest()">🔄 Retake</button>
       </div>
+      <div id="extraResultBtns" style="margin-bottom:8px;"></div>
       <button class="btn btn-primary" onclick="backToHome()" style="margin-bottom:14px;">🏠 Back to Home</button>
       <div id="reviewArea" style="display:none;"></div>
     </div>
@@ -894,6 +938,16 @@ body::before{
   </div>
 </div>
 
+<!-- ========== PAUSE OVERLAY ========== -->
+<div id="pauseOverlay">
+  <div style="font-size:3rem;">⏸️</div>
+  <div class="pause-title">Exam Paused</div>
+  <div class="pause-timer" id="pauseTimerShow">--:--</div>
+  <div class="pause-sub">Timer is stopped. Resume when ready.</div>
+  <button class="btn btn-primary" style="width:200px;margin-top:10px;" onclick="resumeExam()">▶ Resume</button>
+  <button onclick="confirmExitExam()" style="background:none;border:none;color:var(--red);font-size:0.82rem;font-weight:700;cursor:pointer;margin-top:8px;">Exit Test</button>
+</div>
+
 <!-- ========== IMAGE VIEWER ========== -->
 <div class="iv-overlay" id="ivOverlay" onclick="closeIv()">
   <button class="iv-close" onclick="closeIv()">✕</button>
@@ -913,7 +967,7 @@ body::before{
    ============================================================ */
 const CONFIG = {
   repoName: 'My Test Series',
-  repoBaseUrl: 'https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/',
+  repoBaseUrl: 'https://raw.githubusercontent.com/raj20sk20092000-code/SciFlow/main/',
   indexFile: "papers.json",
 };
 // PWA Service Worker
@@ -948,6 +1002,12 @@ let pdfDoc         = null;
 let pdfPage        = 1;
 let retakeData     = null;
 
+// NEW FEATURES
+let bookmarkedQs  = [];   // flagged question indices during exam
+let qNotes        = {};   // qIdx → note string
+let examPaused    = false;
+let pausedTimeLeft = 0;
+
 // SRS session
 let srsQueue       = [];
 let srsIdx         = 0;
@@ -956,7 +1016,7 @@ let srsRevealed    = false;
 /* ============================================================
    INDEXEDDB
    ============================================================ */
-const DB_NAME = 'TestFlowDB';
+const DB_NAME = 'SciFlowDB';
 let db = null;
 
 function openDB(){
@@ -994,131 +1054,23 @@ function saveSrsSettings(){
   saveLocalData();
 }
 
-async function clearAllData(){
-  if(!confirm('Are you sure? All test history, SRS cards and streak will be deleted!')) return;
-  testHistory = [];
-  srsData     = {};
-  streakData  = {dates:[]};
-  srsSettings = {newPerDay:10};
-  try {
-    await dbSet('testHistory', testHistory);
-    await dbSet('srsData',     srsData);
-    await dbSet('streakData',  streakData);
-    await dbSet('srsSettings', srsSettings);
-  } catch(e){}
-  renderHome();
-  renderSrsPage();
-  alert('✅ All data cleared!');
-}
 
 /* ============================================================
    REPO — FETCH FROM GITHUB
    ============================================================ */
-/* ---- DEMO DATA (used when CONFIG.repoBaseUrl === '__DEMO__') ---- */
-const DEMO_INDEX = {
-  name: "Demo Test Series",
-  description: "Sample papers to demonstrate TestFlow",
-  papers: [
-    {
-      id: "physics_motion",
-      name: "Physics — Motion & Laws",
-      type: "mcq",
-      subject: "Physics",
-      difficulty: "Medium",
-      questions: 5,
-      time: 10,
-      description: "Newton's laws, velocity, acceleration",
-      file: "__demo__/physics_motion.json"
-    },
-    {
-      id: "biology_cell",
-      name: "Biology — Cell Structure",
-      type: "mcq",
-      subject: "Biology",
-      difficulty: "Easy",
-      questions: 5,
-      time: 8,
-      description: "Cell organelles and functions",
-      file: "__demo__/biology_cell.json"
-    },
-    {
-      id: "math_algebra",
-      name: "Mathematics — Algebra",
-      type: "mcq",
-      subject: "Mathematics",
-      difficulty: "Easy",
-      questions: 5,
-      time: 8,
-      description: "Linear equations, basic algebra",
-      file: "__demo__/math_algebra.json"
-    },
-    {
-      id: "general_science",
-      name: "General Science Mixed",
-      type: "mcq",
-      subject: "General",
-      difficulty: "Hard",
-      questions: 8,
-      time: 15,
-      description: "Mixed science concepts",
-      file: "__demo__/general_science.json"
-    }
-  ]
-};
-
-const DEMO_PAPERS = {
-  "__demo__/physics_motion.json": [
-    {q:"Newton ke pehle niyam ko kya kehte hain?",opts:["Inertia ka niyam","Force ka niyam","Action-Reaction","Momentum niyam"],ans:["A"],exp:"First Law = Law of Inertia — ek object rest ya motion mein rehta hai jab tak external force na lage"},
-    {q:"F = ma kaunse Newton niyam ka formula hai?",opts:["First Law","Second Law","Third Law","Kepler's Law"],ans:["B"],exp:"Newton's Second Law: F = mass × acceleration"},
-    {q:"Velocity ka SI unit kya hai?",opts:["m/s²","km/h","m/s","N"],ans:["C"],exp:"Velocity = displacement/time, unit = metre per second (m/s)"},
-    {q:"Mass 5 kg aur acceleration 4 m/s² ho toh force kitni hogi?",opts:["1.25 N","9 N","20 N","25 N"],ans:["C"],exp:"F = ma = 5 × 4 = 20 N"},
-    {q:"Har action ke barabar vipreet reaction hoti hai — yeh kaunsa niyam hai?",opts:["First Law","Second Law","Third Law","Gravity Law"],ans:["C"],exp:"Newton's Third Law — Action-Reaction principle"}
-  ],
-  "__demo__/biology_cell.json": [
-    {q:"Cell ka 'power house' kise kehte hain?",opts:["Nucleus","Ribosome","Mitochondria","Golgi Body"],ans:["C"],exp:"Mitochondria ATP banata hai — isliye power house kehte hain"},
-    {q:"Plant cell mein kaunsi cheez animal cell mein nahi hoti?",opts:["Mitochondria","Cell Wall","Ribosome","Nucleus"],ans:["B"],exp:"Cell Wall sirf plant cells mein hoti hai — cellulose ki bani hoti hai"},
-    {q:"DNA kahan store hota hai?",opts:["Cytoplasm","Ribosome","Nucleus","Cell Membrane"],ans:["C"],exp:"DNA nucleus ke andar hota hai — yahi genetic information ka center hai"},
-    {q:"Photosynthesis kahan hoti hai?",opts:["Mitochondria","Chloroplast","Nucleus","Vacuole"],ans:["B"],exp:"Chloroplast mein chlorophyll hota hai jo photosynthesis karta hai"},
-    {q:"Protein synthesis kahan hoti hai?",opts:["Nucleus","Mitochondria","Ribosome","Golgi Body"],ans:["C"],exp:"Ribosomes — ye amino acids ko link karke proteins banate hain"}
-  ],
-  "__demo__/math_algebra.json": [
-    {q:"2x + 6 = 14 mein x = ?",opts:["3","4","5","6"],ans:["B"],exp:"2x = 14-6 = 8, x = 4"},
-    {q:"x² - 16 = 0 mein x ki values kya hain?",opts:["±2","±4","±8","±16"],ans:["B"],exp:"x² = 16, x = ±4"},
-    {q:"Linear equation mein variable ki highest power kya hoti hai?",opts:["0","1","2","3"],ans:["B"],exp:"Linear equation definition: variable power = 1"},
-    {q:"3x - 9 = 0 mein x = ?",opts:["1","2","3","9"],ans:["C"],exp:"3x = 9, x = 3"},
-    {q:"(a + b)² = ?",opts:["a² + b²","a² + 2ab + b²","a² - b²","2a + 2b"],ans:["B"],exp:"(a+b)² = a² + 2ab + b² — yeh ek important algebraic identity hai"}
-  ],
-  "__demo__/general_science.json": [
-    {q:"Prakash ki speed vacuum mein kitni hai?",opts:["3×10⁶ m/s","3×10⁸ m/s","3×10¹⁰ m/s","3×10⁴ m/s"],ans:["B"],exp:"c = 3×10⁸ m/s (approximately 3 lakh km/s)"},
-    {q:"Paani ka chemical formula kya hai?",opts:["CO₂","H₂O₂","H₂O","NaCl"],ans:["C"],exp:"Water = H₂O — 2 hydrogen + 1 oxygen atom"},
-    {q:"Sabse chhota planet kaun sa hai?",opts:["Mars","Mercury","Venus","Pluto"],ans:["B"],exp:"Mercury — solar system ka sabse chhota planet"},
-    {q:"Ek healthy adult ki normal heart rate kitni hoti hai?",opts:["40-50 bpm","60-100 bpm","120-150 bpm","150-200 bpm"],ans:["B"],exp:"Normal resting heart rate = 60-100 beats per minute"},
-    {q:"Sound ki speed air mein approximately kitni hai?",opts:["300 m/s","343 m/s","1000 m/s","150 m/s"],ans:["B"],exp:"Speed of sound in air ≈ 343 m/s at 20°C"},
-    {q:"Photosynthesis ka equation kya hai?",opts:["CO₂ + H₂O → Glucose + O₂","O₂ + H₂O → Glucose","Glucose → CO₂ + H₂O","CO₂ → O₂ + Glucose"],ans:["A"],exp:"6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂"},
-    {q:"Human body mein kitni bones hoti hain (adult)?",opts:["106","206","306","406"],ans:["B"],exp:"Adult human body mein 206 bones hoti hain"},
-    {q:"Gravity acceleration (g) ki approximate value kya hai?",opts:["9.8 m/s²","3.8 m/s²","1.6 m/s²","19.8 m/s²"],ans:["A"],exp:"g ≈ 9.8 m/s² Earth surface pe"}
-  ]
-};
-
 async function fetchRepo(){
   setRepoDot('loading');
   document.getElementById('repoName').textContent = CONFIG.repoName || 'Loading...';
-  document.getElementById('repoUrl').textContent = CONFIG.repoBaseUrl === '__DEMO__' ? '📦 Demo Mode' : CONFIG.repoBaseUrl;
-
-  try {
-    if(CONFIG.repoBaseUrl === '__DEMO__'){
-      repoIndex = DEMO_INDEX;
-    } else {
-      const url = CONFIG.repoBaseUrl + CONFIG.indexFile;
-      const res = await fetch(url);
-      if(!res.ok) throw new Error('HTTP ' + res.status);
-      repoIndex = await res.json();
-    }
-
-    allPapers = repoIndex.papers || [];
-    document.getElementById('repoName').textContent = repoIndex.name || CONFIG.repoName;
-    document.getElementById('repoUrl').textContent = CONFIG.repoBaseUrl === '__DEMO__' ? '📦 Demo Mode — Replace CONFIG.repoBaseUrl to use your repo' : CONFIG.repoBaseUrl;
+  document.getElementById('repoUrl').textContent  = CONFIG.repoBaseUrl;
+  try{
+    const url  = CONFIG.repoBaseUrl + CONFIG.indexFile;
+    const resp = await fetch(url+'?t='+Date.now());
+    if(!resp.ok) throw new Error('HTTP '+resp.status);
+    const data = await resp.json();
+    repoIndex  = data;
+    allPapers  = data.papers || [];
     setRepoDot('ok');
+    document.getElementById('repoName').textContent = data.name || CONFIG.repoName;
     document.getElementById('hs-papers').textContent = allPapers.length;
     renderPapers();
     renderRecent();
@@ -1126,7 +1078,7 @@ async function fetchRepo(){
   } catch(e){
     setRepoDot('error');
     document.getElementById('repoName').textContent = '⚠️ Repository Error';
-    document.getElementById('repoUrl').textContent = e.message;
+    document.getElementById('repoUrl').textContent  = e.message;
     toast('❌ Could not load repository', 'error');
   }
 }
@@ -1139,13 +1091,10 @@ function setRepoDot(state){
 function refreshRepo(){ fetchRepo(); }
 
 async function fetchPaperQuestions(paper){
-  if(CONFIG.repoBaseUrl === '__DEMO__'){
-    return DEMO_PAPERS[paper.file] || [];
-  }
-  const url = CONFIG.repoBaseUrl + paper.file;
-  const res = await fetch(url);
-  if(!res.ok) throw new Error('Failed to load: ' + paper.file);
-  return await res.json();
+  const url  = CONFIG.repoBaseUrl + paper.file;
+  const resp = await fetch(url+'?t='+Date.now());
+  if(!resp.ok) throw new Error('HTTP '+resp.status);
+  return await resp.json();
 }
 
 /* ============================================================
@@ -1161,6 +1110,7 @@ function goPage(name){
   if(name==='results') renderHistory();
   if(name==='review')  renderSrsPage();
   if(name==='home')    renderHome();
+  if(name==='analytics') renderAnalytics();
 }
 
 function showExamView(){
@@ -1295,6 +1245,9 @@ async function startPaperTest(){
     isPdfTest = currentPaper.type === 'pdf';
     answers = {};
     pdfTestAnsKey = {};
+    bookmarkedQs = [];
+    qNotes = {};
+    examPaused = false;
     currentQs = isPdfTest ? qs.slice(0, pdfQCount) : shuffleArr([...qs]).slice(0, pdfQCount);
     qTimeTaken = new Array(currentQs.length).fill(0);
     qStartTime = Date.now();
@@ -1335,14 +1288,21 @@ function renderMcqQuestions(){
         <div>${o}</div>
       </div>`;
     }).join('');
+    const isBm = bookmarkedQs.includes(i);
     return `<div class="exam-qcard" id="qcard-${i}">
       <div class="eq-head">
         <div class="eq-num">Q${i+1}</div>
         ${q.subject ? `<div class="eq-type">${q.subject}</div>` : ''}
+        <div style="flex:1;"></div>
+        <button class="bm-btn" id="bm-${i}" onclick="toggleBookmark(${i})">${isBm?'🔖':'🏷️'}</button>
       </div>
-      <div class="eq-text">${q.q}</div>
+      ${q.q?`<div class="eq-text">${q.q}</div>`:''}
       ${q.img ? `<img class="eq-img" src="${q.img}" onclick="openIv(this.src)">` : ''}
       <div class="eq-opts" id="opts-${i}">${opts}</div>
+      <button class="note-toggle" onclick="toggleNoteArea(${i})">📝 ${qNotes[i]?'Edit Note':'Add Note'}</button>
+      <div id="noteArea-${i}" style="display:${qNotes[i]?'block':'none'};">
+        <textarea class="note-area" id="noteInp-${i}" placeholder="Write your note here..." onblur="saveNote(${i})">${qNotes[i]||''}</textarea>
+      </div>
     </div>`;
   }).join('');
 }
@@ -1377,12 +1337,11 @@ function toggleOpt(qIdx, letter){
 
 function renderQdots(){
   const el = document.getElementById('examQdots');
-  el.innerHTML = currentQs.map((_,i)=>`<div class="qdot ${answers[i]&&answers[i].length?'answered':''}" onclick="scrollToQ(${i})">${i+1}</div>`).join('');
-}
-
-function scrollToQ(i){
-  const el = document.getElementById('qcard-'+i);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.innerHTML = currentQs.map((_,i)=>{
+    const done = answers[i]&&answers[i].length;
+    const flagged = bookmarkedQs.includes(i);
+    return `<div class="qdot${done?' answered':''}${flagged?' flagged':''}" onclick="scrollToQ(${i})">${flagged?'🔖':(i+1)}</div>`;
+  }).join('');
 }
 
 function updateExamProg(){
@@ -1551,12 +1510,34 @@ function updateTimerDisplay(){
 
 /* ---- SUBMIT ---- */
 function confirmExitExam(){
+  if(examPaused) resumeExam();
   if(confirm('Exit test? Your progress will be lost.')) exitExam();
 }
 
 function exitExam(){
   clearInterval(timerInt);
+  document.getElementById('pauseOverlay').classList.remove('active');
+  examPaused = false;
   showMainView();
+}
+
+/* ---- PAUSE / RESUME ---- */
+function pauseExam(){
+  if(examPaused) return;
+  examPaused = true;
+  clearInterval(timerInt);
+  pausedTimeLeft = timeLeft;
+  const m = Math.floor(timeLeft/60);
+  const s = timeLeft%60;
+  document.getElementById('pauseTimerShow').textContent =
+    timeLeft > 0 ? String(m).padStart(2,'0')+':'+String(s).padStart(2,'0') : '∞';
+  document.getElementById('pauseOverlay').classList.add('active');
+}
+function resumeExam(){
+  if(!examPaused) return;
+  examPaused = false;
+  document.getElementById('pauseOverlay').classList.remove('active');
+  if(pausedTimeLeft > 0){ timeLeft = pausedTimeLeft; startTimer(); }
 }
 
 function submitExam(){
@@ -1573,10 +1554,10 @@ function calculateMcqResult(){
   const details = currentQs.map((q,i)=>{
     const userAns = answers[i] || [];
     const correctAns = q.ans || [];
-    if(!userAns.length){ skip++; return {q,userAns,correctAns,status:'skip'}; }
+    if(!userAns.length){ skip++; return {q,userAns,correctAns,status:'skip',note:qNotes[i]||'',flagged:bookmarkedQs.includes(i)}; }
     const isCorrect = userAns.length===correctAns.length && correctAns.every(a=>userAns.includes(a));
-    if(isCorrect){ correct++; return {q,userAns,correctAns,status:'correct'}; }
-    else{ wrong++; return {q,userAns,correctAns,status:'wrong'}; }
+    if(isCorrect){ correct++; return {q,userAns,correctAns,status:'correct',note:qNotes[i]||'',flagged:bookmarkedQs.includes(i)}; }
+    else{ wrong++; return {q,userAns,correctAns,status:'wrong',note:qNotes[i]||'',flagged:bookmarkedQs.includes(i)}; }
   });
 
   const total = currentQs.length;
@@ -1686,6 +1667,22 @@ function showResultUI(record){
 
   document.getElementById('reviewArea').style.display = 'none';
   retakeData = record;
+
+  // Extra revision buttons
+  const extraBtns = document.getElementById('extraResultBtns');
+  if(extraBtns){
+    let btns = '';
+    const wrongCount = (record.details||[]).filter(d=>d.status==='wrong').length;
+    const flaggedCount = (record.details||[]).filter(d=>d.flagged).length;
+    if(wrongCount > 0){
+      btns += `<button class="btn" onclick="startQuickRevision(${record.id})" style="background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.3);color:var(--red);margin-bottom:8px;">⚡ Quick Revision (${wrongCount} wrong)</button>`;
+    }
+    if(flaggedCount > 0){
+      btns += `<button class="btn" onclick="startBookmarkRevision(${record.id})" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--gold);margin-bottom:8px;">🔖 Review Flagged (${flaggedCount})</button>`;
+    }
+    extraBtns.innerHTML = btns;
+  }
+
   updateHomeStats();
 }
 
@@ -1718,7 +1715,7 @@ function renderReviewItems(){
     const icon = d.status==='correct'?'✅':d.status==='wrong'?'❌':'⬜';
     const q = d.q;
     return `<div class="review-item ${cls}">
-      <div class="rv-st" style="color:${d.status==='correct'?'var(--green)':d.status==='wrong'?'var(--red)':'var(--gold)'};">${icon} Q${i+1} — ${d.status.toUpperCase()}</div>
+      <div class="rv-st" style="color:${d.status==='correct'?'var(--green)':d.status==='wrong'?'var(--red)':'var(--gold)'};">${icon} Q${i+1} — ${d.status.toUpperCase()}${d.flagged?' 🔖':''}</div>
       ${q.q ? `<div style="font-size:0.85rem;font-weight:600;margin-bottom:8px;line-height:1.5;">${q.q}</div>` : ''}
       ${q.img ? `<img src="${q.img}" style="width:100%;border-radius:8px;margin-bottom:10px;" onclick="openIv(this.src)">` : ''}
       ${d.status!=='skip'?`
@@ -1726,7 +1723,7 @@ function renderReviewItems(){
           <span style="color:var(--muted);">Your answer: </span>
           <span style="font-weight:700;color:${d.status==='correct'?'var(--green)':'var(--red)'};">${d.userAns.join(', ')||'—'}</span>
         </div>
-      `:''} 
+      `:''}
       ${d.status==='wrong'?`
         <div style="font-size:0.78rem;margin-bottom:6px;">
           <span style="color:var(--muted);">Correct: </span>
@@ -1735,12 +1732,186 @@ function renderReviewItems(){
       `:''}
       ${q.marks !== undefined ? `<div style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Marks: <b style="color:${d.status==='correct'?'var(--green)':d.status==='wrong'?'var(--red)':'var(--muted)'};">${d.status==='correct'?'+'+q.marks : d.status==='wrong'?(q.negMarks||0) : 0}</b></div>` : ''}
       ${q.exp?`<div style="font-size:0.75rem;color:var(--text2);background:var(--s2);border-radius:8px;padding:9px 11px;margin-top:6px;line-height:1.6;">💡 ${q.exp}</div>`:''}
+      ${d.note?`<div style="font-size:0.75rem;color:var(--cyan);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:8px 10px;border-radius:8px;margin-top:6px;">📝 ${d.note}</div>`:''}
     </div>`;
   }).join('');
 }
 
 function retakeTest(){
   if(retakeData){ openPaper(retakeData.paperId); showMainView(); }
+}
+
+/* ---- BOOKMARK / FLAG ---- */
+function toggleBookmark(qIdx){
+  const i = bookmarkedQs.indexOf(qIdx);
+  if(i>=0) bookmarkedQs.splice(i,1); else bookmarkedQs.push(qIdx);
+  const btn = document.getElementById('bm-'+qIdx);
+  if(btn) btn.textContent = bookmarkedQs.includes(qIdx) ? '🔖' : '🏷️';
+  renderQdots();
+  toast(bookmarkedQs.includes(qIdx) ? '🔖 Flagged!' : 'Flag removed', 'success');
+}
+
+/* ---- NOTES ---- */
+function toggleNoteArea(qIdx){
+  const area = document.getElementById('noteArea-'+qIdx);
+  const btn  = area.previousElementSibling;
+  if(area.style.display==='none'){
+    area.style.display='block';
+    document.getElementById('noteInp-'+qIdx).focus();
+  } else {
+    saveNote(qIdx);
+    area.style.display='none';
+  }
+  btn.textContent = '📝 '+(qNotes[qIdx]?'Edit Note':'Add Note');
+}
+function saveNote(qIdx){
+  const val = document.getElementById('noteInp-'+qIdx)?.value||'';
+  if(val.trim()) qNotes[qIdx] = val.trim();
+  else delete qNotes[qIdx];
+  const btn = document.getElementById('noteArea-'+qIdx)?.previousElementSibling;
+  if(btn) btn.textContent = '📝 '+(qNotes[qIdx]?'Edit Note':'Add Note');
+}
+
+/* ---- QUICK REVISION (wrong questions) ---- */
+function startQuickRevision(recordId){
+  const r = testHistory.find(h=>h.id===recordId);
+  if(!r||!r.details) return;
+  const wrongQs = r.details.filter(d=>d.status==='wrong').map(d=>d.q);
+  if(!wrongQs.length){ toast('No wrong questions!','error'); return; }
+  currentPaper = { id: r.paperId, name: r.paperName+' — Quick Revision', type:'mcq', marksCorrect:1, marksWrong:0 };
+  isPdfTest = false;
+  answers = {};
+  bookmarkedQs = [];
+  qNotes = {};
+  examPaused = false;
+  currentQs = wrongQs;
+  qTimeTaken = wrongQs.map(()=>0);
+  qStartTime = Date.now();
+  document.getElementById('examTitle').textContent = currentPaper.name;
+  document.getElementById('examMcqScroll').style.display='block';
+  document.getElementById('examPdfMode').style.display='none';
+  renderMcqQuestions();
+  renderQdots();
+  updateExamProg();
+  document.getElementById('timerDisplay').textContent='∞';
+  showExamView();
+  toast(`⚡ ${wrongQs.length} galat questions load hue!`, 'success');
+}
+
+/* ---- BOOKMARK REVISION (flagged questions) ---- */
+function startBookmarkRevision(recordId){
+  const r = testHistory.find(h=>h.id===recordId);
+  if(!r||!r.details) return;
+  const flaggedQs = r.details.filter(d=>d.flagged).map(d=>d.q);
+  if(!flaggedQs.length){ toast('No flagged questions!','error'); return; }
+  currentPaper = { id: r.paperId, name: r.paperName+' — Flagged Review', type:'mcq', marksCorrect:1, marksWrong:0 };
+  isPdfTest = false;
+  answers = {};
+  bookmarkedQs = [];
+  qNotes = {};
+  examPaused = false;
+  currentQs = flaggedQs;
+  qTimeTaken = flaggedQs.map(()=>0);
+  qStartTime = Date.now();
+  document.getElementById('examTitle').textContent = currentPaper.name;
+  document.getElementById('examMcqScroll').style.display='block';
+  document.getElementById('examPdfMode').style.display='none';
+  renderMcqQuestions();
+  renderQdots();
+  updateExamProg();
+  document.getElementById('timerDisplay').textContent='∞';
+  showExamView();
+  toast(`🔖 ${flaggedQs.length} flagged questions load hue!`, 'success');
+}
+
+/* ---- ANALYTICS ---- */
+function renderAnalytics(){
+  const el   = document.getElementById('analyticsContent');
+  const hist = testHistory;
+  if(!hist.length){
+    el.innerHTML = `<div class="empty"><div class="empty-icon">📈</div><h3>No data yet</h3><p>Complete some tests to see analytics</p></div>`;
+    return;
+  }
+  const totalTests   = hist.length;
+  const avgScore     = Math.round(hist.reduce((s,r)=>s+(r.pct||0),0)/totalTests);
+  const totalQs      = hist.reduce((s,r)=>s+(r.total||0),0);
+  const totalCorrect = hist.reduce((s,r)=>s+(r.correct||0),0);
+  const overallAcc   = totalQs ? Math.round(totalCorrect/totalQs*100) : 0;
+
+  // Per-paper stats
+  const paperMap = {};
+  hist.forEach(r=>{
+    if(!paperMap[r.paperName]) paperMap[r.paperName] = {attempts:0,totalPct:0,correct:0,total:0};
+    paperMap[r.paperName].attempts++;
+    paperMap[r.paperName].totalPct += r.pct||0;
+    paperMap[r.paperName].correct  += r.correct||0;
+    paperMap[r.paperName].total    += r.total||0;
+  });
+
+  // Subject-wise
+  const subjectMap = {};
+  hist.forEach(r=>{
+    if(!r.details) return;
+    r.details.forEach(d=>{
+      const sub = d.q.subject || 'General';
+      if(!subjectMap[sub]) subjectMap[sub] = {correct:0,total:0};
+      subjectMap[sub].total++;
+      if(d.status==='correct') subjectMap[sub].correct++;
+    });
+  });
+
+  const recent = hist.slice(-7).reverse();
+  const paperEntries = Object.entries(paperMap).sort((a,b)=>b[1].attempts-a[1].attempts).slice(0,8);
+  const subjectEntries = Object.entries(subjectMap)
+    .map(([s,d])=>({subject:s, acc:d.total?Math.round(d.correct/d.total*100):0, total:d.total}))
+    .filter(s=>s.total>=2).sort((a,b)=>a.acc-b.acc).slice(0,6);
+
+  el.innerHTML = `
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-val">${totalTests}</div><div class="stat-lbl">Tests</div></div>
+      <div class="stat-box"><div class="stat-val">${avgScore}%</div><div class="stat-lbl">Avg Score</div></div>
+      <div class="stat-box"><div class="stat-val">${overallAcc}%</div><div class="stat-lbl">Accuracy</div></div>
+    </div>
+    ${subjectEntries.length ? `
+    <div class="sec-label">📉 Subject-wise Accuracy</div>
+    <div class="card">
+      ${subjectEntries.map(s=>`
+        <div class="analytics-bar-wrap">
+          <div class="analytics-bar-label">
+            <span>${s.subject}</span>
+            <span style="color:${s.acc>=60?'var(--green)':s.acc>=40?'var(--gold)':'var(--red)'};">${s.acc}%</span>
+          </div>
+          <div class="analytics-bar-track">
+            <div class="analytics-bar-fill" style="width:${s.acc}%;background:${s.acc>=60?'linear-gradient(90deg,var(--green),#34d399)':s.acc>=40?'linear-gradient(90deg,var(--gold),#fbbf24)':'linear-gradient(90deg,var(--red),#fb7185)'}"></div>
+          </div>
+        </div>
+      `).join('')}
+    </div>` : ''}
+    <div class="sec-label">📋 Paper-wise Performance</div>
+    <div class="card">
+      ${paperEntries.map(([name,d])=>{
+        const avg = Math.round(d.totalPct/d.attempts);
+        const clr = avg>=60?'var(--green)':avg>=40?'var(--gold)':'var(--red)';
+        return `<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);">
+          <div style="flex:1;font-size:0.82rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${name}</div>
+          <div style="font-size:0.7rem;color:var(--muted);">${d.attempts}x</div>
+          <div style="font-size:0.88rem;font-weight:800;color:${clr};">${avg}%</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="sec-label">📅 Recent Tests (last ${recent.length})</div>
+    <div class="card">
+      ${recent.map(r=>{
+        const clr = r.pct>=60?'var(--green)':r.pct>=35?'var(--gold)':'var(--red)';
+        return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+          <div style="font-size:0.82rem;font-weight:800;color:${clr};min-width:42px;">${r.pct}%</div>
+          <div style="flex:1;font-size:0.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.paperName}</div>
+          <div style="font-size:0.65rem;color:var(--muted);">${new Date(r.date).toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div style="height:20px;"></div>
+  `;
 }
 
 function backToHome(){
@@ -2282,7 +2453,7 @@ function toast(msg, type='success'){
    GITHUB CLOUD SYNC
    ============================================================ */
 const GH_OWNER = 'raj20sk20092000-code';
-const GH_REPO  = 'MOCKMB';
+const GH_REPO  = 'SciFlow';
 const GH_FILE  = 'userdata/sync.json';
 const GH_API   = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
 
@@ -2411,8 +2582,9 @@ async function init(){
     if(document.getElementById('srsView').classList.contains('active-view')){
       exitSrsSession(); history.pushState({}, ''); return;
     }
-    // Exam open
+    // Exam open — pause overlay first
     if(document.getElementById('examView').classList.contains('active-view')){
+      if(examPaused){ resumeExam(); history.pushState({}, ''); return; }
       confirmExitExam(); history.pushState({}, ''); return;
     }
     // Result open
