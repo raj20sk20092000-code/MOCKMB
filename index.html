@@ -367,6 +367,21 @@ body::before{
   font-family:'JetBrains Mono',monospace;
 }
 .eq-opt.sel .opt-key{background:var(--acc2);border-color:var(--acc2);color:white;}
+.opts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2px;}
+.grid-opt{
+  display:flex;align-items:center;justify-content:center;
+  height:52px;background:var(--s2);
+  border:2px solid var(--border);border-radius:11px;
+  font-size:1rem;font-weight:800;cursor:pointer;
+  transition:all .17s;-webkit-user-select:none;
+}
+.grid-opt:active{transform:scale(.97);}
+.grid-opt.sel{background:rgba(99,102,241,.18);border-color:var(--acc2);color:#a5b4fc;}
+.grid-opt.correct{background:rgba(16,185,129,.18);border-color:rgba(16,185,129,.6);color:#6ee7b7;}
+.grid-opt.wrong{background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.5);color:#fb7185;}
+.grid-opt.faded{opacity:.35;}
+/* Multi-correct badge */
+.eq-type-multi{display:inline-block;margin-left:8px;padding:2px 8px;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);color:var(--cyan);border-radius:20px;font-size:0.65rem;font-weight:800;}
 
 /* PDF split */
 .pdf-half{
@@ -1408,27 +1423,44 @@ function setupMcqExam(){
   updateExamProg();
 }
 
+function isImageOnly(opts){
+  return !opts || !opts.length || opts.every(o=>!o||o==='A'||o==='B'||o==='C'||o==='D');
+}
+function renderOpts(opts, selArr, qIdx, mode){
+  const imgOnly = isImageOnly(opts);
+  if(imgOnly){
+    return `<div class="opts-grid">${['A','B','C','D'].map(l=>{
+      const sel = selArr && selArr.includes(l);
+      const fn  = mode==='srs' ? `selectSrsOpt('${l}')` : `toggleOpt(${qIdx},'${l}')`;
+      const id  = mode==='srs' ? `id="srsOpt_${l}"` : `id="eo_${qIdx}_${l}"`;
+      return `<div ${id} class="grid-opt${sel?' sel':''}" onclick="${fn}">${l}</div>`;
+    }).join('')}</div>`;
+  } else {
+    return `<div class="eq-opts" id="opts-${qIdx}">${(opts||[]).map((o,j)=>{
+      const l = String.fromCharCode(65+j);
+      const sel = selArr && selArr.includes(l);
+      return `<div class="eq-opt ${sel?'sel':''}" onclick="${mode==='srs'?`selectSrsOpt('${l}')`:`toggleOpt(${qIdx},'${l}')`}">
+        <div class="opt-key">${l}</div><div>${o}</div>
+      </div>`;
+    }).join('')}</div>`;
+  }
+}
+
 function renderMcqQuestions(){
   const list = document.getElementById('examQList');
   list.innerHTML = currentQs.map((q,i)=>{
-    const opts = (q.opts||[]).map((o,j)=>{
-      const letter = String.fromCharCode(65+j);
-      const sel = (answers[i]||[]).includes(letter);
-      return `<div class="eq-opt ${sel?'sel':''}" onclick="toggleOpt(${i},'${letter}')">
-        <div class="opt-key">${letter}</div>
-        <div>${o}</div>
-      </div>`;
-    }).join('');
     const isBm = bookmarkedQs.includes(i);
+    const isMulti = q.ans && q.ans.length > 1;
     return `<div class="exam-qcard" id="qcard-${i}">
       <div class="eq-head">
         <div class="eq-num">Q${i+1}</div>
         ${q.subject ? `<div class="eq-type">${q.subject}</div>` : ''}
+        ${isMulti ? `<span class="eq-type-multi">MULTI</span>` : ''}
         <button class="bm-btn" id="bm-${i}" onclick="toggleBookmark(${i})">${isBm?'🔖':'🏷️'}</button>
       </div>
-      <div class="eq-text">${q.q}</div>
+      <div class="eq-text">${q.q||''}</div>
       ${q.img ? `<img class="eq-img" src="${q.img}" onclick="openIv(this.src)">` : ''}
-      <div class="eq-opts" id="opts-${i}">${opts}</div>
+      ${renderOpts(q.opts, answers[i]||[], i, 'exam')}
       <button class="note-toggle" onclick="toggleNoteArea(${i})">📝 ${qNotes[i]?'Edit Note':'Add Note'}</button>
       <div id="noteArea-${i}" style="display:${qNotes[i]?'block':'none'};">
         <textarea class="note-area" id="noteInp-${i}" placeholder="Write your note here..." onblur="saveNote(${i})">${qNotes[i]||''}</textarea>
@@ -1442,22 +1474,28 @@ function toggleOpt(qIdx, letter){
   if(qStartTime && (!answers[qIdx] || !answers[qIdx].length)){
     const elapsed = Math.round((Date.now() - qStartTime) / 1000);
     qTimeTaken[qIdx] = elapsed;
-    qStartTime = Date.now(); // reset for next question
+    qStartTime = Date.now();
   }
   if(!answers[qIdx]) answers[qIdx] = [];
   const arr = answers[qIdx];
   const idx = arr.indexOf(letter);
   if(idx>=0) arr.splice(idx,1); else arr.push(letter);
-  // Re-render opts
-  const container = document.getElementById('opts-'+qIdx);
-  if(container){
-    const q = currentQs[qIdx];
-    container.innerHTML = (q.opts||[]).map((o,j)=>{
+  // Re-render opts using renderOpts (handles grid + list)
+  const q = currentQs[qIdx];
+  const imgOnly = isImageOnly(q.opts);
+  if(imgOnly){
+    // Update grid-opt classes in place
+    ['A','B','C','D'].forEach(l=>{
+      const el = document.getElementById(`eo_${qIdx}_${l}`);
+      if(el) el.className = 'grid-opt' + (answers[qIdx].includes(l)?' sel':'');
+    });
+  } else {
+    const container = document.getElementById('opts-'+qIdx);
+    if(container) container.innerHTML = (q.opts||[]).map((o,j)=>{
       const l = String.fromCharCode(65+j);
       const sel = answers[qIdx].includes(l);
       return `<div class="eq-opt ${sel?'sel':''}" onclick="toggleOpt(${qIdx},'${l}')">
-        <div class="opt-key">${l}</div>
-        <div>${o}</div>
+        <div class="opt-key">${l}</div><div>${o}</div>
       </div>`;
     }).join('');
   }
@@ -2375,10 +2413,11 @@ function renderSrsCard(){
     document.getElementById('srsQBody').innerHTML = '';
     document.getElementById('srsFinish').style.display = 'block';
     document.getElementById('srsFinish').innerHTML = `<div class="srs-finish">
-      <div style="font-size:3rem;margin-bottom:14px;">🎉</div>
-      <div style="font-size:1.1rem;font-weight:900;margin-bottom:8px;">Session Complete!</div>
-      <div style="font-size:0.82rem;color:var(--text2);margin-bottom:20px;">${srsIdx} cards reviewed</div>
-      <button class="btn btn-primary" onclick="exitSrsSession()">✅ Done</button>
+      <div style="font-size:3.5rem;margin-bottom:12px;">🎉</div>
+      <div style="font-size:1.15rem;font-weight:900;margin-bottom:6px;">Session Complete!</div>
+      <div style="font-size:0.82rem;color:var(--text2);margin-bottom:6px;">Great work! ${srsIdx} cards reviewed.</div>
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:24px;">Come back tomorrow for your next session.</div>
+      <button class="btn btn-primary" onclick="exitSrsSession()">← Back to Review</button>
     </div>`;
     saveLocalData();
     return;
@@ -2402,12 +2441,7 @@ function renderSrsCard(){
       ${q.img ? `<img src="${q.img}" style="width:100%;border-radius:8px;" onclick="openIv(this.src)">` : ''}
       ${!q.q && !q.img ? 'No question text' : ''}
     </div>
-    ${(q.opts||[]).length ? `<div id="srsOptsArea" style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
-      ${(q.opts||[]).map((o,j)=>{
-        const letter = String.fromCharCode(65+j);
-        return `<div id="srsOpt_${letter}" onclick="selectSrsOpt('${letter}')" style="padding:9px 12px;background:var(--s2);border:1px solid var(--border);border-radius:9px;font-size:0.85rem;cursor:pointer;transition:all .2s;">${letter}. ${o}</div>`;
-      }).join('')}
-    </div>` : ''}
+    ${(q.opts||[]).length ? renderOpts(q.opts, [], -1, 'srs') : ''}
     <button class="srs-reveal-btn" id="srsRevealBtn" onclick="revealSrsAnswer()">👁️ Show Answer</button>
     <div class="srs-answer-area" id="srsAnswerArea">
       ${q.exp?`<div class="srs-exp">💡 ${q.exp}</div>`:''}
@@ -2447,27 +2481,32 @@ function revealSrsAnswer(){
   const card = srsQueue[srsIdx];
   const q = card ? card.q : null;
   const correctLetters = (q&&q.ans) ? q.ans.map(a=>a.trim().toUpperCase()) : [];
+  const imgOnly = isImageOnly(q&&q.opts);
 
   document.querySelectorAll('[id^="srsOpt_"]').forEach(el=>{
     const letter = el.id.replace('srsOpt_','');
     const isCorrect = correctLetters.includes(letter);
     const isSelected = letter === srsSelectedOpt;
-    const optText = q&&q.opts ? q.opts[letter.charCodeAt(0)-65] : '';
-    if(isCorrect){
-      el.style.background = 'rgba(16,185,129,.15)';
-      el.style.border = '2px solid rgba(16,185,129,.6)';
-      el.style.color = '#6ee7b7';
-      el.style.fontWeight = '700';
-      el.textContent = '✅ ' + letter + '. ' + optText;
-    } else if(isSelected && !isCorrect){
-      el.style.background = 'rgba(244,63,94,.12)';
-      el.style.border = '2px solid rgba(244,63,94,.4)';
-      el.style.color = '#fb7185';
-      el.textContent = '❌ ' + letter + '. ' + optText;
+    if(imgOnly){
+      // grid-opt style: use CSS classes
+      el.className = 'grid-opt ' + (isCorrect ? 'correct' : isSelected ? 'wrong' : 'faded');
     } else {
-      el.style.opacity = '0.45';
+      // text opt style: show text feedback
+      const optText = q&&q.opts ? q.opts[letter.charCodeAt(0)-65] : '';
+      if(isCorrect){
+        el.style.background='rgba(16,185,129,.15)'; el.style.border='2px solid rgba(16,185,129,.6)';
+        el.style.color='#6ee7b7'; el.style.fontWeight='700';
+        el.innerHTML = `<div class="opt-key" style="background:rgba(16,185,129,.3);border-color:rgba(16,185,129,.6);color:#6ee7b7;">${letter}</div><div>✅ ${optText}</div>`;
+      } else if(isSelected && !isCorrect){
+        el.style.background='rgba(244,63,94,.12)'; el.style.border='2px solid rgba(244,63,94,.4)';
+        el.style.color='#fb7185';
+        el.innerHTML = `<div class="opt-key" style="background:rgba(244,63,94,.2);border-color:rgba(244,63,94,.5);color:#fb7185;">${letter}</div><div>❌ ${optText}</div>`;
+      } else {
+        el.style.opacity='0.45';
+      }
     }
-    el.style.cursor = 'default';
+    el.style.cursor='default';
+    el.onclick=null;
   });
 
   const revealBtn = document.getElementById('srsRevealBtn');
@@ -2554,7 +2593,15 @@ function renderSrsDueCard(){
   const card = document.getElementById('srsDueCard');
   if(total>0){
     card.style.display='block';
-    document.getElementById('srsDueInfo').textContent=`${due} cards due for review + ${newC} new cards ready`;
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="goPage('review')">
+        <div style="font-size:1.8rem;">🧠</div>
+        <div style="flex:1;">
+          <div style="font-size:0.88rem;font-weight:800;color:#a5b4fc;">${total} cards due for review</div>
+          <div style="font-size:0.7rem;color:var(--muted);margin-top:2px;">${due} review${due!==1?'s':''} · ${newC} new · Tap to start</div>
+        </div>
+        <div style="color:var(--muted);font-size:1.1rem;">›</div>
+      </div>`;
   } else {
     card.style.display='none';
   }
