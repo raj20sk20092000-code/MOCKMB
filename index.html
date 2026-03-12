@@ -1457,16 +1457,6 @@ function renderQdots(){
   }).join('');
 }
 
-function scrollToQ(i){
-  if(isPdfTest){
-    currentPdfQIdx = i;
-    renderPdfQuestion();
-  } else {
-    const el = document.getElementById('qcard-'+i);
-    if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
-  }
-}
-
 function updateExamProg(){
   const answered = Object.keys(answers).filter(k=>answers[k]&&answers[k].length).length;
   const total    = currentQs.length;
@@ -1697,10 +1687,10 @@ function calculatePdfResult(){
   const details = currentQs.map((q,i)=>{
     const userAns    = (answers[i]||[]);
     const correctAns = q.ans || [];
-    if(!userAns.length){ skip++; return {q, userAns, correctAns, status:'skip'}; }
+    if(!userAns.length){ skip++; return {q, userAns, correctAns, status:'skip', note:qNotes[i]||'', flagged:bookmarkedQs.includes(i)}; }
     const isCorrect = userAns.length===correctAns.length && correctAns.every(a=>userAns.includes(a));
-    if(isCorrect){ correct++; return {q, userAns, correctAns, status:'correct'}; }
-    else          { wrong++;   return {q, userAns, correctAns, status:'wrong'};   }
+    if(isCorrect){ correct++; return {q, userAns, correctAns, status:'correct', note:qNotes[i]||'', flagged:bookmarkedQs.includes(i)}; }
+    else          { wrong++;   return {q, userAns, correctAns, status:'wrong',   note:qNotes[i]||'', flagged:bookmarkedQs.includes(i)}; }
   });
   const total = currentQs.length;
   const pct   = total ? Math.round(correct/total*100) : 0;
