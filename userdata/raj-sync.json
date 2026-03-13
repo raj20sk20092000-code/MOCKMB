@@ -285,7 +285,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u32.png",
@@ -307,7 +307,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u43.png",
@@ -330,7 +330,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u14.png",
@@ -353,7 +353,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u73.png",
@@ -375,8 +375,8 @@
     "UPBED2021P1_4": {
       "interval": 1,
       "ease": 2.5,
-      "reps": 0,
-      "dueDate": "2026-03-13",
+      "reps": 1,
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u87.png",
@@ -399,7 +399,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u30.png",
@@ -422,7 +422,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u16.png",
@@ -444,7 +444,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u76.png",
@@ -467,7 +467,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u24.png",
@@ -490,7 +490,7 @@
       "interval": 1,
       "ease": 2.5,
       "reps": 0,
-      "dueDate": "2026-03-13",
+      "dueDate": "2026-03-14",
       "q": {
         "q": "",
         "img": "https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/u8.png",
@@ -518,5 +518,5 @@
   "srsSettings": {
     "newPerDay": 10
   },
-  "savedAt": "2026-03-13T23:11:44.168Z"
+  "savedAt": "2026-03-13T23:12:36.018Z"
 }
