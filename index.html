@@ -1006,11 +1006,43 @@ body::before{
 /* ============================================================
    CONFIG — EDIT THIS SECTION TO POINT TO YOUR GITHUB REPO
    ============================================================ */
-const CONFIG = {
-  repoName: 'My Test Series',
-  repoBaseUrl: 'https://raw.githubusercontent.com/raj20sk20092000-code/MOCKMB/main/',
-  indexFile: "papers.json",
+
+/* ============================================================
+   ⚙️  APP CONFIG — SIRF YEH SECTION EDIT KARO
+   ============================================================
+
+   STEPS:
+   1. APP_NAME     → App ka naam (title + topbar mein dikhega)
+   2. GH_OWNER     → GitHub username (repo owner)
+   3. GH_REPO      → Repository name
+   4. PAPERS_BRANCH→ Branch jahan papers.json hai (usually 'main')
+   5. SYNC_FILE    → User data save karne ki file path
+
+   Example:
+     APP_NAME:  'ShivaFlow'
+     GH_OWNER:  'raj20sk20092000-code'
+     GH_REPO:   'MOCKMB'
+
+   ============================================================ */
+const APP_CONFIG = {
+  APP_NAME:      'TestFlow',                        // App naam
+  GH_OWNER:      'raj20sk20092000-code',            // GitHub username
+  GH_REPO:       'MOCKMB',                          // Repo naam
+  PAPERS_BRANCH: 'main',                            // Branch
+  PAPERS_FILE:   'papers.json',                     // Index file
+  SYNC_FILE:     'userdata/sync.json',              // Default sync file (user can override with name)
+  DB_NAME:       'TestFlowDB',                      // IndexedDB naam (alag rakho agar same device pe 2 apps)
 };
+
+/* — Derived values (mat chhedo) — */
+const CONFIG = {
+  repoName:    APP_CONFIG.APP_NAME,
+  repoBaseUrl: `https://raw.githubusercontent.com/${APP_CONFIG.GH_OWNER}/${APP_CONFIG.GH_REPO}/${APP_CONFIG.PAPERS_BRANCH}/`,
+  indexFile:   APP_CONFIG.PAPERS_FILE,
+};
+const GH_OWNER = APP_CONFIG.GH_OWNER;
+const GH_REPO  = APP_CONFIG.GH_REPO;
+const GH_FILE  = APP_CONFIG.SYNC_FILE;
 // PWA Service Worker — network-first, auto-update on new version
 if('serviceWorker' in navigator){
   const sw = `
@@ -1073,7 +1105,7 @@ let srsRevealed    = false;
 /* ============================================================
    INDEXEDDB
    ============================================================ */
-const DB_NAME = 'TestFlowDB';
+const DB_NAME = APP_CONFIG.DB_NAME || 'TestFlowDB';
 let db = null;
 
 function openDB(){
@@ -2655,9 +2687,7 @@ function toast(msg, type='success'){
 /* ============================================================
    GITHUB CLOUD SYNC
    ============================================================ */
-const GH_OWNER = 'raj20sk20092000-code';
-const GH_REPO  = 'MOCKMB';
-const GH_FILE  = 'userdata/sync.json'; // default fallback
+// GH_FILE defined in APP_CONFIG above
 let ghSyncFile = GH_FILE; // actual file used — can be customized per user
 let ghToken   = '';
 let ghFileSha = null;
@@ -2814,6 +2844,10 @@ async function initGitHubSync(){
    INIT
    ============================================================ */
 async function init(){
+  // Set app name from config
+  document.title = APP_CONFIG.APP_NAME;
+  const titleEl = document.querySelector('.topbar-title');
+  if(titleEl) titleEl.textContent = APP_CONFIG.APP_NAME;
   await loadLocalData();
   await fetchRepo();
   await initGitHubSync();
