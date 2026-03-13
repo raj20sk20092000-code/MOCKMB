@@ -2763,18 +2763,25 @@ async function connectGitHub(){
 function disconnectGitHub(){
   if(!confirm('Disconnect from GitHub sync?')) return;
   ghToken = ''; ghFileSha = null; ghSyncFile = GH_FILE;
-  dbSet('ghToken', ''); dbSet('ghFileSha', ''); dbSet('ghSyncFile', '');
+  dbSet('ghToken', ''); dbSet('ghFileSha', ''); dbSet('ghSyncFile', ''); dbSet('ghUserName', '');
   updateSyncUI(false);
 }
 
-async function pushToGitHub(silent=false){
+async function pushToGitHub(silent=false, retryCount=0){
   if(!ghToken) return;
   // Always fetch latest SHA before push to avoid conflicts
   try {
     const shaRes = await fetch(getGhApi() + '?t=' + Date.now(), {
       headers: { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github.v3+json' }
     });
-    if(shaRes.ok){ const d=await shaRes.json(); ghFileSha=d.sha; await dbSet('ghFileSha', ghFileSha); }
+    if(shaRes.ok){
+      const d = await shaRes.json();
+      ghFileSha = d.sha;
+      await dbSet('ghFileSha', ghFileSha);
+    } else if(shaRes.status === 404){
+      ghFileSha = null;
+      await dbSet('ghFileSha', '');
+    }
   } catch(e){}
   const payload = { testHistory, srsData, streakData, srsSettings, savedAt: new Date().toISOString() };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
@@ -2786,7 +2793,17 @@ async function pushToGitHub(silent=false){
       headers: { 'Authorization': `token ${ghToken}`, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json' },
       body: JSON.stringify(body)
     });
-    if(!res.ok){ const e=await res.json().catch(()=>({})); throw new Error(e.message||res.status); }
+    if(!res.ok){
+      const errData = await res.json().catch(()=>({}));
+      const errMsg = errData.message || String(res.status);
+      // SHA mismatch — auto retry upto 2 times with fresh SHA
+      if(retryCount < 2 && (res.status === 409 || errMsg.toLowerCase().includes('does not match'))){
+        ghFileSha = null;
+        await dbSet('ghFileSha', '');
+        return pushToGitHub(silent, retryCount + 1);
+      }
+      throw new Error(errMsg);
+    }
     const data = await res.json();
     ghFileSha = data.content.sha;
     await dbSet('ghFileSha', ghFileSha);
@@ -2836,6 +2853,8 @@ async function initGitHubSync(){
       ghSyncFile = await dbGet('ghSyncFile') || GH_FILE;
       const name = await dbGet('ghUserName') || '';
       updateSyncUI(true, name);
+      // Auto-pull latest data from cloud on startup
+      await pullFromGitHub(true);
     }
   } catch(e){}
 }
@@ -2881,15 +2900,6 @@ async function init(){
     goPage('home'); history.pushState({}, '');
   });
 
-  // auto push after every save
-  const origSave = saveLocalData;
-  window.saveLocalData = async function(){
-    await origSave();
-    if(ghToken){
-      clearTimeout(window._ghTimer);
-      window._ghTimer = setTimeout(pushToGitHub, 3000);
-    }
-  };
 }
 
 init();
