@@ -1,1 +1,11 @@
-
+{
+  "testHistory": [],
+  "srsData": {},
+  "streakData": {
+    "dates": []
+  },
+  "srsSettings": {
+    "newPerDay": 10
+  },
+  "savedAt": "2026-03-14T00:09:59.193Z"
+}
