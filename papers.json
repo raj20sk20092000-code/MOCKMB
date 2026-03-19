@@ -94,6 +94,19 @@
   "file": "UPBED2018P1.json"
    },
     {
+  "id": "UPBED2016P1",
+  "name": "UPBED 2016 — Paper 1",
+  "type": "mcq",
+  "subject": "UP BEd",
+  "difficulty": "Medium",
+  "questions": 100,
+  "time": 120,
+  "marksCorrect": 1,
+  "marksWrong": 0,
+  "description": "UP BEd 2016 Paper 1 — 100 Questions with Answer Key",
+  "file": "UPBED2016P1.json"
+   },
+    {
   "id": "UPBED2015P1",
   "name": "UPBED 2015 — Paper 1",
   "type": "mcq",
