@@ -42,6 +42,19 @@
       "file": "UPBED2023P1.json"
     },
     {
+  "id": "UPBED2022P1",
+  "name": "UPBED 2022 — Paper 1",
+  "type": "mcq",
+  "subject": "UP BEd",
+  "difficulty": "Medium",
+  "questions": 100,
+  "time": 120,
+  "marksCorrect": 1,
+  "marksWrong": 0,
+  "description": "UP BEd 2022 Paper 1 — 100 Questions with Answer Key",
+  "file": "UPBED2022P1.json"
+    },
+    {
       "id": "UPBED2021P1",
       "name": "UPBED 2021 — Paper 1",
       "type": "mcq",
