@@ -157,6 +157,19 @@
       "marksWrong": 0,
       "description": "UP BEd 2014 Paper 1 — 100 Questions with Answer Key",
       "file": "UPBED2014P1.json"
-    }
+    },
+    {
+  "id": "UPBED2025P2",
+  "name": "UPBED 2025 — Paper 2",
+  "type": "mcq",
+  "subject": "UP BEd",
+  "difficulty": "Medium",
+  "questions": 100,
+  "time": 120,
+  "marksCorrect": 1,
+  "marksWrong": 0,
+  "description": "UP BEd 2025 Paper 2 — 100 Questions with Answer Key",
+  "file": "UPBED2025P2.json"
+  }
   ]
 }
